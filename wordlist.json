@@ -1,1 +1,8 @@
-
+const WORD_LIST = [
+  "run",
+  "jump",
+  "walk",
+  "have",
+  "good",
+  "day"
+];
