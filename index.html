@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Granchaol Cipher Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1>Granchaol Cipher</h1>
+
+<textarea id="input" placeholder="Enter sentence..."></textarea>
+
+<br>
+
+<select id="mode">
+  <option value="basic">Basic</option>
+  <option value="advanced">Advanced</option>
+  <option value="ultra">Ultra</option>
+</select>
+
+<button onclick="encrypt()">Encrypt</button>
+
+<pre id="output"></pre>
+
+<script src="wordlist.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
