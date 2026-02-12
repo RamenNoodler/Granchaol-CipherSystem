@@ -12,7 +12,7 @@ function encrypt() {
 
   words.forEach(word => {
 
-    const index = WORD_LIST.indexOf(word);
+    const index = wordList.indexOf(word);
 
     if (index === -1) {
       results.push(word + " (not in dictionary)");
