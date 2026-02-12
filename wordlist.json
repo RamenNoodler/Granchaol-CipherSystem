@@ -1,4 +1,4 @@
-const WORD_LIST = [
+const wordList = [
   "run",
   "jump",
   "walk",
