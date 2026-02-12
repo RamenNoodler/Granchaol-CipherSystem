@@ -1,3 +1,5 @@
+alert("script loaded");
+
 function encrypt() {
 
   const text = document.getElementById("input").value
