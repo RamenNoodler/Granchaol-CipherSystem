@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
-<script>
-alert("inline script works");
-</script>
-  <head>
+<head>
   <meta charset="UTF-8">
-  <title>Granchaol Cipher Engine</title>
+  <title>Granchaol Cipher</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h1>Granchaol Cipher</h1>
 
-<textarea id="input" placeholder="Enter sentence..."></textarea>
-
-<br>
+<textarea id="input" placeholder="Enter text..."></textarea>
+<br><br>
 
 <select id="mode">
   <option value="basic">Basic</option>
@@ -22,10 +18,7 @@ alert("inline script works");
   <option value="ultra">Ultra</option>
 </select>
 
-function encrypt() {
-  alert("BUTTON WORKS");
-}
-
+<button id="encryptBtn">Encrypt</button>
 
 <pre id="output"></pre>
 
