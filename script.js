@@ -1,11 +1,8 @@
-// Confirm script loads
-alert("script loaded");
-
 document.addEventListener("DOMContentLoaded", function () {
 
-  const button = document.getElementById("encryptBtn");
+  const input = document.getElementById("input");
 
-  button.addEventListener("click", function () {
+  input.addEventListener("input", function () {
     encrypt();
   });
 
@@ -21,7 +18,7 @@ function encrypt() {
   const mode = modeElement.value;
 
   if (!text) {
-    outputElement.textContent = "No input.";
+    outputElement.textContent = "";  // Empty output if there's no input
     return;
   }
 
@@ -33,7 +30,7 @@ function encrypt() {
     const index = WORD_LIST.indexOf(word);
 
     if (index === -1) {
-      results.push(word + " (not in dictionary)");
+      results.push(word + " (not in dictionary)");  // If not in dictionary
       return;
     }
 
@@ -53,9 +50,9 @@ function encrypt() {
 
   });
 
-  results.sort((a, b) => a.length - b.length);
+  results.sort((a, b) => a.length - b.length);  // Sort results by length
 
-  outputElement.textContent = results.join("\n");
+  outputElement.textContent = results.join("\n");  // Output the results to the screen
 }
 
 function generateAdvanced(value) {
