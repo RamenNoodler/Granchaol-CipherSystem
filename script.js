@@ -1,15 +1,31 @@
+// Confirm script loads
 alert("script loaded");
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const button = document.getElementById("encryptBtn");
+
+  button.addEventListener("click", function () {
+    encrypt();
+  });
+
+});
 
 function encrypt() {
 
-  const text = document.getElementById("input").value
-    .toLowerCase()
-    .trim();
+  const inputElement = document.getElementById("input");
+  const outputElement = document.getElementById("output");
+  const modeElement = document.getElementById("mode");
 
-  const mode = document.getElementById("mode").value;
+  const text = inputElement.value.toLowerCase().trim();
+  const mode = modeElement.value;
+
+  if (!text) {
+    outputElement.textContent = "No input.";
+    return;
+  }
 
   const words = text.split(/\s+/);
-
   let results = [];
 
   words.forEach(word => {
@@ -24,7 +40,7 @@ function encrypt() {
     const value = index + 1;
 
     if (mode === "basic") {
-      results.push(...generateBasic(value));
+      results.push("W" + value);
     }
 
     if (mode === "advanced") {
@@ -39,11 +55,7 @@ function encrypt() {
 
   results.sort((a, b) => a.length - b.length);
 
-  document.getElementById("output").textContent = results.join("\n");
-}
-
-function generateBasic(value) {
-  return ["W" + value];
+  outputElement.textContent = results.join("\n");
 }
 
 function generateAdvanced(value) {
@@ -67,9 +79,7 @@ function generateUltra(value) {
 
   for (let a = 1; a < value - 1; a++) {
     for (let b = 1; b < value - a; b++) {
-
       const c = value - a - b;
-
       forms.push("W" + a + "h" + b + "m" + c + "l");
     }
   }
